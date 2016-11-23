@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CineCampo</string>
+    <string name="cadastro_sublinhado">Ainda não é cadastrado? Clique aqui!</string>
+    <string name="title_activity_main2">Main2Activity</string>
+</resources>
