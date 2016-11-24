@@ -42,7 +42,6 @@ if ( !isset($_SESSION['usuario']) and !isset($_SESSION['senha']) ) {
     <div class="container">
     <h2> Cadastrar Filme </h2>
      <form class="form-signin" method="POST" action="cadastrar_filmes.php" enctype="multipart/form-data">
-
         <div class="input-group">
          <?php if ($_GET["insertSuccess"]) echo '<div class="alert alert-success" role="alert" style="margin: 5 auto;">Submissão realizada com sucesso!</div>' ?>
          <?php if ($_GET["insertFailed"]) echo '<div class="alert alert-danger" role="alert" style="margin: 5 auto;">Submissão falhou! Impossível processar, tente novamente.</div>' ?>
@@ -53,7 +52,7 @@ if ( !isset($_SESSION['usuario']) and !isset($_SESSION['senha']) ) {
 
   <div class="form-group">
       <span class="input-group-addon" id="basic-addon-three">Nome do Filme:</span>
-         <input type="text" class="form-control" name="field_nome_filme"id="field_nome_filme" aria-describedby="basic-addon-three" required
+         <input type="text" class="form-control" name="field_nome_filme" id="field_nome_filme" aria-describedby="basic-addon-three" required
                 data-fv-notempty-message="(Campo Vazio)">
   </div>
 
@@ -72,13 +71,46 @@ if ( !isset($_SESSION['usuario']) and !isset($_SESSION['senha']) ) {
           <input type="text" class="form-control" name="field_genero" id="field_genero" aria-describedby="basic-addon" required
                 data-fv-notempty-message="(Campo Vazio)">
   </div>
-
-<!-- FAZER A PARTE DA IMAGEM
+  <div class="form-group">
+      <span class="input-group-addon" id="basic-addon">Inicio das Sessões:</span>
+          <input type="text" class="form-control" name="field_inicio_sessoes" id="field_inicio_sessoes" aria-describedby="basic-addon" required
+                data-fv-notempty-message="(Campo Vazio)">
+  </div>
+  <div class="form-group">
+      <span class="input-group-addon" id="basic-addon">Término das Sessões:</span>
+          <input type="text" class="form-control" name="field_termino_sessoes" id="field_termino_sessoes" aria-describedby="basic-addon" required
+                data-fv-notempty-message="(Campo Vazio)">
+  </div>
+  <div class="form-group">
+      <span class="input-group-addon" id="basic-addon">Salas</span>
+  </div>
+  <div class="form-check">
+  <label class="form-check-label">
+    <input class="form-check-input" type="checkbox" name="field_sala_1" id="field_sala_1" value="SIM">
+    Sala 1 - 19:30hrs
+  </label>
+</div>
+<div class="form-check">
+  <label class="form-check-label">
+    <input class="form-check-input" type="checkbox" name="field_sala_2" id="field_sala_2" value="SIM">
+    Sala 2 - 21:30hrs
+  </label>
+</div>
+<div class="form-group">
+      <span class="input-group-addon" id="basic-addon">Filme 3D</span>
+</div>
+<select class="custom-select">
+  <option selected>Selecione uma Opção</option>
+  <option name="field_sala3d_sim" id="field_sala3d" value="SIM">Sim</option>
+  <option name="field_sala3d_nao" id="field_sala3d" value="NAO">Não</option>
+</select>
+<div class="form-group">
+      <span class="input-group-addon" id="basic-addon">Banner do Filme</span>
+</div>
   <div class="input-group">
           <input type="file" name="field_imagem" required
                 data-fv-notempty-message="(Campo Vazio)">
   </div>
-  -->
 
     <div class="button-group">
         <button class="btn btn-md btn-success btn-block " type="submit">Cadastrar</button>

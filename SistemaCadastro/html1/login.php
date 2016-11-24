@@ -6,6 +6,12 @@ $password = "asafaster";
 $database = "cinecampo";
 $table = "Administrador";
 
+/* Criação da Tabela Administrador
+
+create table (id int primary key not null auto_increment, usuario varchar(255), senha varchar(255));
+
+*/
+
 /* Autenticação */
 mysql_connect("$host","$username","$password") or die ("Impossível conectar!");
 mysql_select_db("$database") or die ("Database inválida. Tente novamente.");
