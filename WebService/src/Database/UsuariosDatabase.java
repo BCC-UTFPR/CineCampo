@@ -6,14 +6,19 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.jvnet.hk2.annotations.Service;
 
 import Interfaces.DatabaseInterface;
 import Interfaces.JSONInterface;
 import Interfaces.UsuariosInterface;
 
+@Service
 public class UsuariosDatabase implements UsuariosInterface, DatabaseInterface, JSONInterface {
 	private Connection database;
 	private String resposta;

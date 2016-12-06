@@ -4,10 +4,15 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.charset.Charset;
+
+import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.*;
+
 import Database.FilmesDatabase;
+
 import org.apache.commons.io.FileUtils;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
@@ -15,16 +20,16 @@ import com.google.gson.JsonParser;
 
 @Path("/filmes")
 public class FilmesPagina {
-	FilmesDatabase database = new FilmesDatabase();
-	Gson builder = new GsonBuilder().setPrettyPrinting().create();
-	JsonParser parser = new JsonParser();
-
+	private FilmesDatabase database = new FilmesDatabase();
+	private Gson builder = new GsonBuilder().setPrettyPrinting().create();
+	private JsonParser parser = new JsonParser();
+	private File arquivo;
 
 	@GET
 	@Produces(MediaType.TEXT_HTML)
 	public String paginaFilmes() throws IOException{
     	URL HTML = getClass().getResource("Filmes.html");
-    	File arquivo = new File(HTML.getPath());
+    	arquivo = new File(HTML.getPath());
     	String resultado = FileUtils.readFileToString(arquivo, Charset.forName("UTF-8"));
     	return resultado;	
     }	

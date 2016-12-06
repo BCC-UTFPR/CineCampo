@@ -1,10 +1,11 @@
 package Paginas;
 
-import java.io.File;
+import java.io.File; 
 import java.io.IOException;
 import java.net.URL;
 import java.nio.charset.Charset;
 
+import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.*;
 
@@ -19,15 +20,16 @@ import com.google.gson.JsonParser;
 
 @Path("/usuarios")
 public class UsuariosPagina {
-	UsuariosDatabase database = new UsuariosDatabase();
-	Gson builder = new GsonBuilder().setPrettyPrinting().create();
-	JsonParser parser = new JsonParser();
+	private UsuariosDatabase database = new UsuariosDatabase();
+	private Gson builder = new GsonBuilder().setPrettyPrinting().create();
+	private JsonParser parser = new JsonParser();
+	private File arquivo;
 	
 	@GET
 	@Produces(MediaType.TEXT_HTML)
 	public String paginaUsuarios() throws IOException{
     	URL HTML = getClass().getResource("Usuarios.html");
-    	File arquivo = new File(HTML.getPath());
+    	arquivo = new File(HTML.getPath());
     	String resultado = FileUtils.readFileToString(arquivo, Charset.forName("UTF-8"));
     	return resultado;
 	}

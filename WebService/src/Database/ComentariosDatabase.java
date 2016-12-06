@@ -6,19 +6,24 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.jvnet.hk2.annotations.Service;
 
 import Interfaces.ComentariosInterface;
 import Interfaces.DatabaseInterface;
 import Interfaces.JSONInterface;
 
+@Service
 public class ComentariosDatabase implements ComentariosInterface, DatabaseInterface, JSONInterface {
 	private Connection database;
 	private String resposta;
-	@Override
 	
+	@Override
 	public Connection conectar(){
 		try {
 			Class.forName("com.mysql.jdbc.Driver");

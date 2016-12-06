@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.nio.charset.Charset;
 
+import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -20,17 +21,19 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 
+
 @Path("/comentarios")
 public class ComentariosPagina {
-	ComentariosDatabase database = new ComentariosDatabase();
-	Gson builder = new GsonBuilder().setPrettyPrinting().create();
-	JsonParser parser = new JsonParser();
-
+	private ComentariosDatabase database = new ComentariosDatabase();
+	private Gson builder = new GsonBuilder().setPrettyPrinting().create();
+	private JsonParser parser = new JsonParser();
+	private File arquivo;
+	
 	@GET
 	@Produces(MediaType.TEXT_HTML)
 	public String paginaFilmes() throws IOException{
     	URL HTML = getClass().getResource("Comentarios.html");
-    	File arquivo = new File(HTML.getPath());
+    	arquivo = new File(HTML.getPath());
     	String resultado = FileUtils.readFileToString(arquivo, Charset.forName("UTF-8"));
     	return resultado;	
     }	

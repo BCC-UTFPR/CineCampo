@@ -1,5 +1,9 @@
 package Database;
 import java.sql.*;
+
+import javax.inject.Inject;
+import javax.inject.Named;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -17,7 +21,7 @@ public class FilmesDatabase implements FilmesInterface, DatabaseInterface, JSONI
 	
 	@Override
 	public Connection conectar(){
-		try {
+		try {			
 			Class.forName("com.mysql.jdbc.Driver");
 			database = DriverManager.getConnection(
 					"jdbc:mysql://localhost/cinecampo?"
