@@ -1,0 +1,73 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.vinicius.cinecampoapp.FragEAtiv.Home">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/md_white_1000" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView18"
+        android:textColor="@color/material_drawer_dark_background"
+        android:textStyle="normal|bold"
+        android:textSize="14sp"
+        android:text="Telefone: (44) 99999-9999"
+        android:textAlignment="center"
+        android:layout_marginBottom="21dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        app:srcCompat="@drawable/popcorn"
+        android:id="@+id/imageView2"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="13dp" />
+
+    <TextView
+        android:text="CINECAMPO"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView8"
+        android:textColor="@color/material_drawer_dark_background"
+        android:textStyle="normal|bold"
+        android:textSize="40sp"
+        android:layout_below="@+id/imageView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView13"
+        android:textColor="@color/material_drawer_dark_background"
+        android:textStyle="normal|bold"
+        android:textSize="30sp"
+        android:text="Toda a emoção do cinema pertinho de você!"
+        android:textAlignment="center"
+        android:layout_below="@+id/textView8"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView16"
+        android:textColor="@color/material_drawer_dark_background"
+        android:textStyle="normal|bold"
+        android:textSize="14sp"
+        android:text="Av. Brasil,  1000 - Centro, Campo Mourão - PR"
+        android:textAlignment="center"
+        android:layout_above="@+id/textView18"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

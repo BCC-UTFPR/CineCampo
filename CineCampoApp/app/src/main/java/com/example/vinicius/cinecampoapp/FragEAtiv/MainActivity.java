@@ -1,28 +1,21 @@
-package com.example.vinicius.cinecampoapp;
+package com.example.vinicius.cinecampoapp.FragEAtiv;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
-import com.mikepenz.iconics.IconicsDrawable;
+import com.example.vinicius.cinecampoapp.R;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
-import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
-import com.mikepenz.materialdrawer.model.ProfileSettingDrawerItem;
-import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SectionDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
-import com.mikepenz.materialdrawer.model.interfaces.Nameable;
-import com.mikepenz.materialize.util.UIUtils;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         headerResult = new AccountHeaderBuilder()
                 .withActivity(MainActivity.this)
                 .withTranslucentStatusBar(false)
-                .withHeaderBackground(R.color.material_drawer_dark_background)
+                .withHeaderBackground(R.drawable.header_background)
                 .addProfiles(
                         profile
                 )
@@ -58,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                 .withTranslucentStatusBar(false)
                 .withDrawerLayout(R.layout.material_drawer_fits_not)
                 .addDrawerItems(
-                        new SectionDrawerItem().withName("Menu"),
+                        new PrimaryDrawerItem().withName("Home"),
                         new PrimaryDrawerItem().withName("Filmes em exibição"),
                         new PrimaryDrawerItem().withName("Em breve"),
                         new SectionDrawerItem().withName("Informações"),
@@ -67,16 +60,39 @@ public class MainActivity extends AppCompatActivity {
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
                     public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
-                        if (drawerItem instanceof Nameable) {
-                            Toast.makeText(MainActivity.this, ((Nameable) drawerItem).getName().getText(MainActivity.this), Toast.LENGTH_SHORT).show();
+                        switch (position) {
+                            case 1:
+                                Fragment FragmentHome = new Home();
+                                getFragmentManager().beginTransaction().replace(R.id.activity_main, FragmentHome).addToBackStack(null).commit();
+                                CloseDrawer();
+                                break;
+                            case 2:
+                                Fragment FragmentExibicao = new Exibicao();
+                                getFragmentManager().beginTransaction().replace(R.id.activity_main, FragmentExibicao).addToBackStack(null).commit();
+                                CloseDrawer();
+                                break;
+                            case 3:
+                                Fragment FragmentEmBreve = new EmBreves();
+                                getFragmentManager().beginTransaction().replace(R.id.activity_main, FragmentEmBreve).addToBackStack(null).commit();
+                                CloseDrawer();
+                                break;
                         }
 
                         return false;
                     }
-                }).build();
+                })
+                .build();
+        Fragment FragmentHome = new Home();
+        getFragmentManager().beginTransaction().replace(R.id.activity_main, FragmentHome).commit();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(false);
+    }
+
+    public void CloseDrawer(){
+        if(result.isDrawerOpen()){
+            result.closeDrawer();
+        }
     }
 
     @Override
