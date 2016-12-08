@@ -85,7 +85,7 @@
 										<p><input type="text" name="id" value="<?php print_r($id_url);?>"></p>
 										<p><input type="text" name="usuario_comentar" placeholder="Nome Usuário"></p>
 										<p><input type="password" name="senha_comentar"  placeholder="Senha"></p>
-										<p><textarea cols="45" rows="10" name="comentario" placeholder="Digite seu Comentário"></textarea></p>
+										<p><textarea type="text" cols="45" rows="10" name="comentario" placeholder="Digite seu Comentário"></textarea></p>
 										<div class="stars">
 										    <input class="star star-5" id="star-5" value="5" type="radio" name="star"/>
 										    <label class="star star-5" for="star-5"></label>
@@ -130,8 +130,10 @@
 				//print_r($url_nota);
 				$json_url = file_get_contents($url_nota);
 				$json_data_nota = json_decode($json_url,true);
-				$url1 ="http://138.68.15.190:8080/distribuidos/comentarios/comentar/{$id_url}/{$usuario}/{$comentario}";
-				$json1 = file_get_contents($url1);
+				//print_r($json_data_nota);
+				$url1 ="http://138.68.15.190:8080/distribuidos/comentarios/comentar/{$id_url}/{$usuario}/";
+				print_r($url1);
+				$json1 = file_get_contents($url1.rawurlencode($comentario));
 				$json_data1 = json_decode($json1,true);
 				if ($json_data1["STATUS"]["SUCESSO_AO_COMENTAR"]) {
 					echo "<script type='text/javascript'>alert('Comentário Realizado com Sucesso !')</script>";
