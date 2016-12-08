@@ -1,0 +1,34 @@
+{ "lancamentos":
+	[
+	 	{
+	 	"título":"A Chegada",
+	 	"sinopse":"Quando seres interplanetários deixam marcas na Terra, a Dra. Louise Banks (Amy Adams), uma linguista especialista no assunto, é procurada por militares para traduzir os sinais e desvendar se os alienígenas representam uma ameaça ou não. No entanto, a resposta para todas as perguntas e mistérios pode ameaçar a vida de Louise e a existência de toda a humanidade.",
+	 	"duracao":"125 minutos",
+	 	"genero":"Ficção Científica",
+	 	"inicioExibicao":"24/11/2016",
+	 	"fimExibicao":"01/12/2016",
+	 	"sala":"Sala 1",
+	 	"sessao":["19:30h - 21:30h","21:45h - 23:30h"],
+	 	"3d":"Sim",
+	 	"capa":"http://br.web.img3.acsta.net/c_215_290/pictures/16/10/19/01/57/552532.jpg",
+	 	"nota": 4.5,
+	 	"trailer":"https://www.youtube.com/watch?v=isWwUJf4KEA"
+	 	},
+	 	{
+	 	"título":"Liga da Justiça - Parte Um",
+	 	"sinopse":"Impulsionado pela restauração de sua fé na humanidade e inspirado pelo ato altruísta do Superman (Henry Cavill), Bruce Wayne (Ben Affleck) convoca sua nova aliada Diana Prince (Gal Gadot) para o combate contra um inimigo ainda maior, recém-despertado. Juntos, Batman e Mulher-Maravilha buscam e recrutam com agilidade um time de meta-humanos, mas mesmo com a formação da liga de heróis sem precedentes - Batman, Mulher-Maraviha, Aquaman (Jason Momoa), Cyborg (Ray Fisher) e The Flash (Ezra Miller) -, poderá ser tarde demais para salvar o planeta de um catastrófico ataque.",
+	 	"duracao":"140 minutos",
+	 	"genero":"Ação",
+	 	"inicioExibicao":"24/11/2016",
+	 	"fimExibicao":"01/12/2016",
+	 	"sala":"Sala 2",
+	 	"sessao":["19:30h - 21:30h","21:45h - 23:30h"],
+	 	"3d":"Sim",
+	 	"capa":"http://www.cinemadebuteco.com.br/wp-content/uploads/2016/03/Liga-da-Justi%C3%A7a-filme-810x455.jpg",
+	 	"nota": 8.5,
+	 	"trailer":"https://www.youtube.com/watch?v=2J7qXGaDkrY"
+	 	}
+	]
+}
+	
+
