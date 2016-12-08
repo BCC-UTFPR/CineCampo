@@ -2,11 +2,15 @@ package com.example.vinicius.cinecampoapp.Adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.LayerDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.example.vinicius.cinecampoapp.R;
@@ -44,6 +48,8 @@ public class EmExibicaoAdapter extends ArrayAdapter<EmExibicao> {
             TextView Nome = (TextView) convertView.findViewById(R.id.textView_nome_filme);
             TextView Sessao = (TextView) convertView.findViewById(R.id.textView_sessao);
             TextView Genero = (TextView) convertView.findViewById(R.id.textView_genero);
+            RatingBar nota = (RatingBar) convertView.findViewById(R.id.ratingBar);
+            nota.setRating(Float.parseFloat(String.valueOf(item.getAvaliacao())));
             ImageView Imagem_capa = (ImageView) convertView.findViewById(R.id.imageView_capa);
             Picasso.with(getContext()).load(item.getImagemurl()).into(Imagem_capa);
 

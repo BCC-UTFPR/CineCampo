@@ -1,6 +1,8 @@
 package com.example.vinicius.cinecampoapp.FragEAtiv;
 
 import android.app.Fragment;
+import android.content.Intent;
+import android.icu.util.BuddhistCalendar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -24,12 +26,17 @@ public class MainActivity extends AppCompatActivity {
     private Drawer result = null;
     private AccountHeader headerResult = null;
 
+    String campo_usuario;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final IProfile profile = new ProfileDrawerItem().withName("Mike Penz").withIcon(R.drawable.popcorn);
+        Intent i = getIntent();
+        campo_usuario = i.getExtras().getString("usuario");
+
+        final IProfile profile = new ProfileDrawerItem().withName(campo_usuario).withIcon(R.drawable.popcorn);
 
         headerResult = new AccountHeaderBuilder()
                 .withActivity(MainActivity.this)
@@ -68,6 +75,9 @@ public class MainActivity extends AppCompatActivity {
                                 break;
                             case 2:
                                 Fragment FragmentExibicao = new Exibicao();
+                                Bundle data = new Bundle();
+                                data.putString("usuario", campo_usuario);
+                                FragmentExibicao.setArguments(data);
                                 getFragmentManager().beginTransaction().replace(R.id.activity_main, FragmentExibicao).addToBackStack(null).commit();
                                 CloseDrawer();
                                 break;
