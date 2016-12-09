@@ -1,0 +1,35 @@
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #eee;
+}
+
+.form-signin {
+  max-width: 330px;
+  margin: auto;
+}
+
+.container {
+  padding:15px;
+  background-color:rgba(0, 0, 0, 0.5);;
+  max-width: 330px;
+  border-radius: 15px;
+
+}
+
+.input-group {
+  padding-top: 7px;
+  margin: auto;
+  position: relative;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+
+.button-group {
+  padding-top: 7px;
+  margin: auto;
+  position: relative;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/material_drawer_background">
+
+    <ImageView
+        app:srcCompat="@drawable/popcorn"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/imageView_capa"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_width="120dp"
+        android:layout_height="180dp" />
+
+    <TextView
+        android:text="Nome do Filme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView_nome_filme"
+        android:textSize="25sp"
+        android:layout_marginLeft="9dp"
+        android:layout_marginStart="9dp"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/imageView_capa"
+        android:layout_toEndOf="@+id/imageView_capa"
+        android:textColor="@color/material_drawer_dark_background"
+        android:textStyle="normal|bold"
+        android:fontFamily="sans-serif-smallcaps"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp" />
+
+    <TextView
+        android:text="Gênero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView_genero"
+        android:textColor="@color/material_drawer_dark_background"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:layout_below="@+id/textView_nome_filme"
+        android:layout_alignLeft="@+id/textView_nome_filme"
+        android:layout_alignStart="@+id/textView_nome_filme"
+        android:layout_marginTop="29dp" />
+</RelativeLayout>

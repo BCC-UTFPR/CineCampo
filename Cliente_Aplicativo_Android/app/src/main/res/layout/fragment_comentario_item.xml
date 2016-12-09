@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:text="Nome do Usuário"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView_usuario"
+        android:textColor="@color/material_drawer_dark_background"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginBottom="5dp" />
+
+    <SurfaceView
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:layout_below="@+id/textView_comentario"
+        android:id="@+id/surfaceView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="5dp"
+        android:background="@color/md_grey_300" />
+
+    <TextView
+        android:text="Comentário"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView_comentario"
+        android:textColor="@color/material_drawer_dark_background"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:layout_below="@+id/textView_usuario"
+        android:layout_alignLeft="@+id/textView_usuario"
+        android:layout_alignStart="@+id/textView_usuario"
+        android:layout_marginBottom="5dp" />
+
+</RelativeLayout>
